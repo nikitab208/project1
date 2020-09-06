@@ -1,0 +1,73 @@
+
+    <div class="col-12  py-3" style="background-color: #f8f9fa!important;">
+        <div class="row">
+            <div class="col-md-3" routerLink="/login"><span>Logo</span></div>
+        
+        <div class="col-md-2 ml-auto">Welcome {{userDetails.name}}</div>
+        </div>
+        
+    </div>
+    
+<div class=" fluid">
+    
+<div class="row grow w-100">
+    <div class="col-3 py-3 side">
+        <form [formGroup]="serachForm" >  
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search Here" formControlName="term">
+        </div>
+        <div class="card" *ngFor="let post of empDetails | filter :'title':searchTerm;let i=index">
+            <div class="card-body">
+                <div class="text-dot" style="width:188px">
+                     <span title="{{post.title}}">{{post.title}} </span>
+                </div>
+                  <div class=" editCss"><i class="fa fa-pencil-square-o" aria-hidden="true" (click)="edit(post.id)"></i></div>
+                  <div class=" viewCss"><i class="fa fa-eye" aria-hidden="true" (click)="viewPost(post.id)"></i></div>
+                  <div class=" deleteCss"><i class="fa fa-trash" aria-hidden="true" (click)="deletePost(post.id)"></i></div>
+               
+            </div>
+          
+           
+          </div>
+          </form>
+      
+    </div>
+    <div class="main col-9 h-500 py-3">
+        <form [formGroup]="postForm" >  
+        <div class="card post">
+            <div class="card-header">
+                {{mode}}
+            </div>
+            <div class="card-body">
+               <div class="card-text">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Title</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" formControlName="title"  placeholder="Enter Title" >
+                                
+                              </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Body</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="body" rows="3"></textarea>
+                                
+                              </div>
+                        </div>
+                    </div>
+               </div>
+              <button (click)="addPosts()"  class="btn btn-primary" *ngIf="buttonUpdates">{{buttonUpdate}}</button>
+            </div>
+          </div>
+        </form>
+        </div>
+</div>
+</div>
+<div class="row w-100">
+    <div class="col-12 py-3" style="background-color: #b9bbbd!important;">
+    
+    
+        Footer
+    </div>
+</div>

@@ -1,0 +1,46 @@
+.grow {
+    flex: 1;
+}
+.post{
+    width: 80%;
+    margin:auto
+}
+
+.main {
+    height:500px;
+    overflow-y: auto;
+    border:1px solid 
+}
+.text-dot{
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor:pointer
+}
+.side{
+    height:500px;
+    overflow-y: auto;
+}
+.fluid{
+    padding-left: 27px;
+    padding-right: 23px;
+}
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 9px !important;
+}
+.editCss{
+    margin-left: 195px;
+    margin-top: -21px;
+}
+.viewCss{
+    margin-left: 218px;
+    margin-top: -25px;
+
+}
+.deleteCss{
+    margin-left: 242px;
+    margin-top: -25px;
+
+}
