@@ -1,0 +1,65 @@
+<app-nav-header></app-nav-header>
+    <div class="container">
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+        <div class="row">
+          <div class="col-md-12">
+          <div [ngClass]="{ 'has-error': isSubmitted && formControls.name.errors }">
+            <label for="uname"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="uname" formControlName="name"  required>
+        </div>
+          <div *ngIf="isSubmitted && formControls.name.errors" class="help-block">
+            <div *ngIf="formControls.name.errors.required">Name is required</div>
+          </div>
+            
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" formControlName="email" id="email" required>
+            </div>
+            <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+              <div *ngIf="formControls.email.errors.required">Username is required</div>
+            </div>
+
+          </div>
+          
+      </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" formControlName="password" name="psw" required>
+            </div>
+              <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+                <div *ngIf="formControls.password.errors.required">Username is required</div>
+              </div>
+  
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div [ngClass]="{ 'has-error': isSubmitted && formControls.cPassword.errors }">
+                <label for="psw"><b> Confirm Password</b></label>
+                <input type="password" placeholder="Enter Password" formControlName="cPassword" name="psw" required>
+                </div>
+                <div *ngIf="isSubmitted && formControls.cPassword.errors" class="help-block">
+                  <div *ngIf="formControls.cPassword.errors.required">Username is required</div>
+                </div>
+    
+            </div>
+            </div>
+            <label>
+              <input type="checkbox" formControlName="termCondition" name="remember"> Accept Terms & Condition
+            </label>
+
+            <button type="submit">Register</button>
+            </form>
+     
+    </div>
+  
+   
+  
